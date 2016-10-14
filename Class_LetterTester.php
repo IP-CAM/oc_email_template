@@ -213,6 +213,10 @@ class LetterTester extends ScriptBase
             $html = $template->fetch('default/template/mail/order.tpl');
         }
 
+        if(!is_dir('output'))
+        {
+            mkdir('./output');
+        }
         file_put_contents('output/generated_email.html', $html);
     }
 }
